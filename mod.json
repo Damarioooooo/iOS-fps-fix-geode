@@ -1,0 +1,33 @@
+{
+	"geode": "5.11.2",
+	"gd": {
+		"ios": "2.2081"
+	},
+	"version": "v0.1.0",
+	"id": "yourname.smoothframes",
+	"name": "Smooth Frames",
+	"developer": "yourname",
+	"description": "Fixes FPS stutters by locking the frame interval so nothing can reset it, and optionally smoothing uneven frame times.",
+	"settings": {
+		"lock-interval": {
+			"type": "bool",
+			"name": "Lock frame interval",
+			"description": "Sets the animation interval to the Target FPS when a level starts, when you resume, and re-applies it if anything changes it mid-level.",
+			"default": true
+		},
+		"target-fps": {
+			"type": "int",
+			"name": "Target FPS",
+			"description": "The frame rate to lock to.",
+			"default": 60,
+			"min": 30,
+			"max": 240
+		},
+		"smooth-delta": {
+			"type": "bool",
+			"name": "Smooth frame times (experimental)",
+			"description": "Blends each frame's delta time with a running average so one late frame does not cause a visible jump. This changes timing slightly, so keep it off for anything you want to be legitimate.",
+			"default": false
+		}
+	}
+}
